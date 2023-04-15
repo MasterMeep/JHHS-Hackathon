@@ -47,7 +47,7 @@ def email():
 
     Basic Info About BH&T: PHAT began operating in 2017 and officially began operating as a 501(C)(3) in 2019. The organization was founded by Eric Peterson after a fellow teammate took his own life after multiple tours overseas. As an organization, we believe that we live in a community that supports their veterans but may not know how to show it, and we have veterans that need that support but may not know how to ask. Our three focuses are: Veterans Advocacy, Veterans Outreach and Veterans Village
 
-    Thankyou for Donating!
+    Thank you for Donating!
 
     """
 
