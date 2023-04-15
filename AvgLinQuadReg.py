@@ -8,4 +8,4 @@ model1 = np.poly1d(np.polyfit(x, y, 1))
 model2 = np.poly1d(np.polyfit(x, y, 2))
 
 time_to_predict = 12
-print((model1(time_to_predict) + model2(time_to_predict)) / 2)
+print(min((model1(time_to_predict) + model2(time_to_predict)) / 2, 100))
