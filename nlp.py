@@ -5,10 +5,18 @@ from wordcloud import WordCloud
 sentiment_pipeline = pipeline("sentiment-analysis")
 
 def get_sentiment_score(text):
-    sentiment = sentiment_pipeline(text)
-    sentiment['score'] *= 100
-    sentiment['score'] = int(sentiment['score'] * 100) / 100
-    return sentiment
+    sentences = text.split(".")
+    total = 0
+    for sentence in sentences:
+        sentiment = sentiment_pipeline(sentence)
+        if sentiment[0]['label'] == 'POSITIVE':
+            total += sentiment[0]['score']
+        elif sentiment[0]['label'] == 'NEGATIVE':
+            total -= sentiment[0]['score']
+        
+    total = int(total* 10000)/100
+    
+    return total
     
 def generate_word_cloud(text):
     wordcloud = WordCloud().generate(text)
@@ -17,13 +25,13 @@ def generate_word_cloud(text):
     plt.axis("off")
     plt.show()
 
-def generate_matplotlib_graph(data):
+def generate_matplotlib_graph(data, dates):
     sentimentScores = [get_sentiment_score(text)['score'] for text in data]
-    xCoords = [i for i in range(len(data))]
     
     fig, ax = plt.subplots()
     
-    fig.plot(xCoords, sentimentScores)
+    fig.plot(dates, sentimentScores)
     
     return fig
 
+print(get_sentiment_score("it was alright"))
