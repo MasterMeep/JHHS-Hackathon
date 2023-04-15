@@ -51,7 +51,7 @@ if selected == "Journaling":
 
         save_data()
         if checkBox:
-            openai.api_key = "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"
+            openai.api_key = "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"
             question1 = question[0]
             response1 = st.session_state.savedResponses[d]["feeling"]
             question2 = question[1]
