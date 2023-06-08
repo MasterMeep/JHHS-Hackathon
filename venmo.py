@@ -10,7 +10,7 @@ def email(name, senderEmail):
         global amount
         global id
         #access_token = Client.get_access_token(username='rudrappandya@gmail.com', password='SwordsAMillion12')
-        access_token = "6acbf7822f859806407f63ae9afb13e2f0d2fc3c068210404cf8722afe545b2c"
+        access_token = ""
         print("Your token (please save):", access_token)
 
         client = Client(access_token=access_token)
