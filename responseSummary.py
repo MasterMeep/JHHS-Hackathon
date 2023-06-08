@@ -1,7 +1,7 @@
 import os
 import openai
 
-openai.api_key = "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"
+openai.api_key = ""
 
 question1 = "How are you feeling today?"
 response1 = input("> ")
